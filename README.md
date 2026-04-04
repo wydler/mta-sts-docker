@@ -16,11 +16,11 @@ License: BSD 2-clause license (see LICENSE.txt).
 ## Install
 1. Install docker and containerd using the script
   ```
-    curl https://raw.githubusercontent.com/dwydler/mta-sts-docker/master/docker/misc/02-docker.io-installation.sh | bash
+    curl https://raw.githubusercontent.com/wydler/mta-sts-docker/master/docker/misc/02-docker.io-installation.sh | bash
   ```
 2. Clone the repository to the correct folder for docker container:
   ```
-   git clone https://github.com/dwydler/mta-sts-docker.git /opt/containers/mta-sts
+   git clone https://github.com/wydler/mta-sts-docker.git /opt/containers/mta-sts
    git -C /opt/containers/mta-sts checkout $(git -C /opt/containers/mta-sts tag | tail -1)
   ```
 3. Download dependencies:
