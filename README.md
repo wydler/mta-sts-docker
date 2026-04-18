@@ -31,7 +31,7 @@ The simplest way to run the container is the following commands.
   curl https://raw.githubusercontent.com/wydler/mta-sts-docker/master/docker/misc/02-docker.io-installation.sh | bash
   ```
 2. For IPv6 support, edit the Docker daemon configuration file, located at `/etc/docker/daemon.json`. Configure the following parameters and run `systemctl restart docker.service` to restart docker:
-  ```bas
+  ```bash
   {
     "experimental": true,
     "ip6tables": true
