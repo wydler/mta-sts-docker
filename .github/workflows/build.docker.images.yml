@@ -109,4 +109,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: ${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_REPO }}
           readme-filepath: ./README-dockerhub.md
-          short-description: "This tool verifies whether a give host correctly implements the new in-development MTA-STS standard for downgrade-resistant secure email."
+          short-description: "Checks MTA-STS implementation for secure email."
