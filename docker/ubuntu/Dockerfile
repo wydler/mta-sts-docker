@@ -33,6 +33,7 @@ RUN apt-get update && \
     python3-cryptography \
     python3-flask \
     python3-flask-limiter \
+    python3.12-venv \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -40,7 +41,10 @@ RUN apt-get update && \
 # Python dependencies (via pip)
 #############################################
 COPY docker/ubuntu/requirements.txt /app
-RUN pip install --no-cache-dir -r /app/requirements.txt \
+RUN python3 -m venv venv \
+    && source venv/bin/activate \
+    && pip install --no-cache-dir -r /app/requirements.txt \
+    && deactivate \
     && rm -rf /app
 
 
