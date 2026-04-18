@@ -1,0 +1,3 @@
+[submodule "rootfs/mta-sts"]
+	path = rootfs/mta-sts
+	url = https://github.com/dwydler/mta-sts.git
