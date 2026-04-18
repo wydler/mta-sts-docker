@@ -107,6 +107,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: ${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_REPO }}
+          repository: ${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_REPO }}-${{ matrix.image }}
           readme-filepath: ./README-dockerhub.md
           short-description: "Checks MTA-STS implementation for secure email."
