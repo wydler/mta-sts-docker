@@ -32,6 +32,7 @@ RUN apt-get update && \
     python3-pip \
     python3-cryptography \
     python3-flask \
+    python3-flask-limiter \
     && rm -rf /var/lib/apt/lists/*
 
 
