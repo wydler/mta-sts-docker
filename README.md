@@ -9,6 +9,8 @@ License: BSD 2-clause license (see LICENSE.txt).
 
 * Docker & Docker Compose V2
 * SSH/Terminal access (able to install commands/functions if non-existent)
+* Defaultly the DNS servers from QUAD9 are configured in the check.py script.
+* Outgoing connections via SMTP (port 25/tcp) are required.
 
 
 ## Ports
