@@ -1,7 +1,7 @@
 ############################
 # Stage 1: Runtime
 ############################
-FROM ubuntu:22.04@sha256:ce4a593b4e323dcc3dd728e397e0a866a1bf516a1b7c31d6aa06991baec4f2e0
+FROM ubuntu:22.04@sha256:962f6cadeae0ea6284001009daa4cc9a8c37e75d1f5191cf0eb83fe565b63dd7
 
 
 # Setze Arbeitsverzeichnis für temporäre Dateien
