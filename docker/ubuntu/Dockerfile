@@ -41,12 +41,11 @@ RUN apt-get update && \
 # Python dependencies (via pip)
 #############################################
 COPY docker/ubuntu/requirements.txt /app
-RUN python3 -m venv venv \
-    && source venv/bin/activate \
-    && pip install --no-cache-dir -r /app/requirements.txt \
-    && deactivate \
-    && rm -rf /app
+RUN python3 -m venv /app/venv \
+    && /app/venv/bin/pip install --no-cache-dir -r /app/requirements.txt \
+    && rm -r /app/requirements.txt
 
+ENV PATH="/app/venv/bin:$PATH"
 
 
 #############################################
