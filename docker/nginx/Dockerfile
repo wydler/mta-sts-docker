@@ -15,6 +15,13 @@ LABEL maintainer="Daniel Wydler" \
       org.opencontainers.image.title="wydler/mta-sts-web" \
       org.opencontainers.image.url="https://hub.docker.com/r/wydler/mta-sts-web"
 
+#############################################
+# Install dependencies
+#############################################
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    wget \
+    && rm -rf /var/lib/apt/lists/*      
 
 #############################################
 # nginx configuration
