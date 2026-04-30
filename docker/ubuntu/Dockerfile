@@ -1,7 +1,7 @@
 ############################
 # Stage 1: Runtime
 ############################
-FROM ubuntu:22.04@sha256:962f6cadeae0ea6284001009daa4cc9a8c37e75d1f5191cf0eb83fe565b63dd7
+FROM ubuntu:24.04@sha256:c4a8d5503dfb2a3eb8ab5f807da5bc69a85730fb49b5cfca2330194ebcc41c7b
 
 
 # Setze Arbeitsverzeichnis für temporäre Dateien
@@ -32,6 +32,8 @@ RUN apt-get update && \
     python3-pip \
     python3-cryptography \
     python3-flask \
+    python3-flask-limiter \
+    python3.12-venv \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -39,9 +41,11 @@ RUN apt-get update && \
 # Python dependencies (via pip)
 #############################################
 COPY docker/ubuntu/requirements.txt /app
-RUN pip install --no-cache-dir -r /app/requirements.txt \
-    && rm -rf /app
+RUN python3 -m venv /app/venv \
+    && /app/venv/bin/pip install --no-cache-dir -r /app/requirements.txt \
+    && rm -r /app/requirements.txt
 
+ENV PATH="/app/venv/bin:$PATH"
 
 
 #############################################
