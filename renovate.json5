@@ -36,7 +36,7 @@
       ],      
       labels: [
         'dependencies',
-        'github_actions',
+        'submodules',
       ],
       draftPR: true,
       additionalBranchPrefix: 'git_submodule/',
