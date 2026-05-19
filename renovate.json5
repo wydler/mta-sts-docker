@@ -13,7 +13,9 @@
     'github-actions',
     'dockerfile',
   ],
-
+  git-submodules: {
+    enabled: true,
+  },
 
   packageRules: [
     {
