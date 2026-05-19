@@ -29,6 +29,23 @@
     },
     {
       // ===========================================================================
+      // GitSubmodule
+      // ===========================================================================
+      matchManagers: [
+        'git-submodules',
+      ],      
+      labels: [
+        'dependencies',
+        'github_actions',
+      ],
+      draftPR: true,
+      additionalBranchPrefix: 'git_submodule/',
+      branchTopic: '{{depNameSanitized}}-{{#if newVersion}}{{newVersion}}{{else}}{{currentValue}}-{{newDigest}}{{/if}}',
+      commitMessageTopic: '{{depName}}',
+      commitMessageExtra: '{{#if newVersion}}from {{currentVersion}} to {{newVersion}}{{else}}{{newValue}} from {{currentDigestShort}} to {{newDigestShort}}{{/if}}',      
+    },    
+    {
+      // ===========================================================================
       // GitHub Actions
       // ===========================================================================  
       matchManagers: [
