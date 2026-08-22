@@ -18,7 +18,7 @@
     'git-submodules',
   ],
 
-  git-submodules: {
+  'git-submodules': {
     enabled: true,
   },
 
