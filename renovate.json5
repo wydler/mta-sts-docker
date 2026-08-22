@@ -15,6 +15,7 @@
   enabledManagers: [
     'github-actions',
     'dockerfile',
+    'git-submodules',
   ],
 
 
