@@ -3,7 +3,7 @@ name: Tools - Renovate
 
 "on":
   schedule:
-    - cron: "0 6 * * *"  # jeden Tag um 06:00 Uhr
+    - cron: "0 5 * * 6"  # Jeden Samstag um 05:00 Uhr
   workflow_dispatch:
     inputs:
       logLevel:
@@ -34,7 +34,7 @@ jobs:
           private-key: ${{ secrets.GH_APP_RDP_PRIVATE_KEY }}
 
       - name: Run Renovate
-        uses: renovatebot/github-action@693b9ef15eec82123529a37c782242f091365961  # v46.1.14
+        uses: renovatebot/github-action@e09d604f8f803bb527bd8321ed5be06c460b8682  # v46.2.2
         with:
           token: ${{ steps.generate-token.outputs.token }}
           # token: ${{ secrets.GH_TOKEN }}

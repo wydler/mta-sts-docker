@@ -1,7 +1,7 @@
 ############################
 # Stage 1: Runtime
 ############################
-FROM nginx:1.31.1@sha256:5aca99593157f4ae539a5dec1092a0ad8762f8e2eb1789085a13a0f5622369f6
+FROM nginx:1.31.3@sha256:8541484afbc9c8a5a8a99b379568ebbc957f658583ec9448fc43104229c03cf8
 
 
 ############################
@@ -45,4 +45,4 @@ RUN chown -R nginx:nginx /var/www/html/mta-sts
 # Prüft regelmäßig, ob der Webserver erreichbar ist
 #############################################
 HEALTHCHECK --interval=30s --timeout=3s \
-  CMD curl -f http://localhost/ || exit 1
+  CMD ["curl", "-f", "http://localhost/"]
