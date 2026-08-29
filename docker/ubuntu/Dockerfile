@@ -33,7 +33,7 @@ RUN apt-get update && \
     python3-cryptography \
     python3-flask \
     python3-flask-limiter \
-    python3.12-venv \
+    python3-venv \
     && rm -rf /var/lib/apt/lists/*
 
 
