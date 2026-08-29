@@ -45,4 +45,4 @@ RUN chown -R nginx:nginx /var/www/html/mta-sts
 # Prüft regelmäßig, ob der Webserver erreichbar ist
 #############################################
 HEALTHCHECK --interval=30s --timeout=3s \
-  CMD ["curl", "-f", "http://localhost/"]]
+  CMD ["curl", "-f", "http://localhost/"]
