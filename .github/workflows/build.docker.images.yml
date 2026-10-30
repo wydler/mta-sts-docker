@@ -122,3 +122,13 @@ jobs:
           repository: ${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_REPO }}-${{ matrix.image }}
           readme-filepath: ./README-dockerhub.md
           short-description: "Checks MTA-STS implementation for secure email."
+
+      - name: Promote image to latest
+        if: github.event_name == 'release' && github.event.action == 'released' && github.event.release.prerelease == false && github.event.release.draft == false
+        shell: bash
+        run: |
+          # Create or update the "latest" tag to point to the newly released image version.
+          # This operation updates the manifest in the registry and preserves all platform variants.
+          docker buildx imagetools create \
+            -t "${{ env.REGISTRY_ACCOUNT }}/${{ env.REGISTRY_REPO }}-${{ matrix.image }}:latest" \
+            ${{ steps.tags.outputs.docker }}
